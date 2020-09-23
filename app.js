@@ -1,13 +1,11 @@
-if(process.env.NODE_ENV !== 'production') {
-	require('dotenv').config()
-}
 
+var dotenv			= require('dotenv').config();
 var express 		= require("express"),
 		app 		= express(),
  bodyParser 		= require("body-parser"),
  mongoose   		= require("mongoose"),
  passport   		= require("passport"),
- session 			= require('express-session')
+ session 			= require('cookie-session')
  flash				= require('connect-flash'),
  LocalStrategy 		= require("passport-local"),
  methodOverride 	= require("method-override"),
