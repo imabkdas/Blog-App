@@ -1,0 +1,41 @@
+
+.navbar-custom{
+    background-color:rgb(240, 217, 217);
+}
+.container {
+    margin: 0 auto;
+    justify-content: center;
+}
+#index {
+    text-align: center;
+}
+#homeHeading {
+    text-align: center;
+    border-top-color: white;
+}
+#content {
+    text-align: left;
+    margin-bottom: 10px;
+    border-bottom-color: black;
+}
+#pic {
+    margin-right: 5px;
+}
+#titlecontent {
+    margin-left: 5px;
+}
+
+#span {
+    cursor: pointer;
+}
+#span:hover {
+    text-decoration: underline;
+}
+.fa fa-trash {
+    font-size: 1.5em;
+}
+
+button:hover,
+button:focus {
+    background: #0053ba;
+}

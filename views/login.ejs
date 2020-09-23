@@ -1,0 +1,22 @@
+<%- include('./partials/header') %>
+<div>
+    <div class="container" style="text-align: center; margin-top: 100px">
+        <h1 style="margin-bottom: 20px">Login Page</h1>
+        <form action="/login" method='POST'>
+            <div style="margin-bottom: 20px;">
+                <label for="enteringUsername" style="margin-right: 5px">Username</label>
+                <input type="text" id="username" name="username" placeholder="username" style="margin-left: 5px" required> 
+            </div>
+            <div style="margin-bottom: 20px">
+                <label for="enteringPassword" style="margin-right: 5px;">Password</label>
+                <input type="password" id="password" name="password" placeholder="password" style="margin-left: 5px;" required> 
+            </div>
+            <input type="submit">
+            <a href="/forgot">Forget Passord?</a>
+        </form>
+        <div style="text-align: center;margin-top: 10px;">
+            <p>Don't have an account?</p><a href="/register">Create an account</a>
+        </div>
+    </div>
+</div>
+<%- include('./partials/footer') %>

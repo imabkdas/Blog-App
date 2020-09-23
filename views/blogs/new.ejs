@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+<div class="container" style="width: 75%">
+<h1>New Blog Post</h1>
+    <form action='/blogs' method='POST'>
+        <label for="nameofPost">Title</label>
+        <div>
+            <input type="text" name="title" placeholder="name">
+        </div>
+        <label for="imagelink">image Link</label>
+        <div>
+            <input type="text" name="image" placeholder="Image Link">
+        </div>
+        <label for="enteringBlogContent"> Blog Content</label>
+        <div>
+            <div class="form-group">
+                <textarea class="form-control" name="description" id="description" rows="5" ></textarea>
+                <script>
+                    CKEDITOR.replace('description');
+                </script>
+              </div>
+        </div>
+        <input class="text-danger" type="submit">
+    </form>
+</div>
+
+<%- include('../partials/footer') %>

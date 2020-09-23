@@ -1,0 +1,33 @@
+<%- include('./partials/header') %>
+<div>
+    <div class="container" style="text-align: center; margin-top: 100px;">
+        <h1 style="margin-bottom: 20px;">Sign Up Form</h1>
+        <form id="form" action="/register" method='POST'>
+            <div style="margin-bottom: 20px;">
+                <label for="username" style="margin-right: 5px">Username</label>
+                <input type="text" id="username" name="username" placeholder="username" style="margin-left: 5px;width: 20%" required> 
+            </div>
+             <div style="margin-bottom: 20px;">
+                <label for="firstName" style="margin-right: 5px">First Name</label>
+                <input type="text" id="firstName" name="firstName" placeholder="First Name" style="margin-left: 5px;width: 20%" required> 
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for="lastName" style="margin-right: 5px">Last Name</label>
+                <input type="text" id="lastName" name="lastName" placeholder="Last Name" style="margin-left: 5px;width: 20%" required> 
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for="email" style="margin-right: 20px">Email</label>
+                <input type="text" id="email" name="email" placeholder="email" style="margin-left: 20px;width: 20%" required> 
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for="password" style="margin-right: 5px">Password</label>
+                <input type="password" id="password" name="password" placeholder="password" style="margin-left: 5px;width: 20%" required> 
+            </div>
+            <input type="submit">
+        </form>
+        <div style="text-align: center;margin-top: 10px;">
+            <p>Already have an account?</p><a href="/login">Login</a>
+        </div>
+    </div>
+</div>
+<%- include('./partials/footer') %>

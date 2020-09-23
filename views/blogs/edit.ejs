@@ -1,0 +1,24 @@
+<%- include('../partials/header') %>
+<div class="container">
+<h1>Edit <%=blog.name %></h1>
+    <form action='/blogs/<%=blog._id%>?_method=PUT' method='POST'>
+        <label for="nameofPost">name</label>
+        <div>
+            <input type="text" name="blog[title]" value = "<%=blog.name%>">
+        </div>
+        <label for="imagelink">image Link</label>
+        <div>
+            <input type="text" name="blog[image]" value = "<%=blog.image%>">
+        </div>
+        <label for="enteringBlogContent"> Blog Content</label>
+        <div class="form-group">
+            <textarea class="form-control" name="blog[description]" id="exampleFormControlTextarea1" rows="5" ><%=blog.description%></textarea>
+            <script>
+                CKEDITOR.replace('blog[description]');
+            </script>
+          </div>
+        <input class="text-danger" type="submit">
+    </form>
+</div>
+
+<%- include('../partials/footer') %>

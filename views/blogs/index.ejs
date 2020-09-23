@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<div class = "container border-left border-right"  id="index" >
+    <div>
+        <h1 id="homeHeading">Start reading Happily</h1>
+    </div>
+    <div class="col-xs-12 d-flex flex-column-reverse flex-sm-column" >
+        <% blogs.forEach(function(blog){ %>
+            <div class="border-bottom col-xs-12 d-flex flex-column-reverse flex-sm-column" id="content">
+                <div class="d-flex flex-xl-row flex-column flex-sm-column">
+                    <div align="left" id="pic">
+                        <img src = "<%= blog.image %>" width="200" >
+                        <div style="margin: 5px">
+                            <span> By <%= blog.author.username %></span>
+                        </div>
+                    </div>
+                    <div id="titlecontent">
+                        <div>
+                            <a href="/blogs/<%= blog._id %>"><%= blog.title %></a>
+                        </div>
+                        <div style="word-break: break-word;">
+                             <p><%- blog.description.substring(0,100) %>.......<a href="/blogs/<%= blog._id %>">Read More</a></p>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>   
+</div>
+
+<%- include('../partials/footer') %>
