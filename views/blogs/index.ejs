@@ -6,7 +6,7 @@
     </div>
     <div class="col-xs-12 d-flex flex-column-reverse flex-sm-column" >
         <% blogs.forEach(function(blog){ %>
-            <div class="border-bottom col-xs-12 d-flex flex-column-reverse flex-sm-column" id="content">
+            <div class="border-bottom col-xs-12 d-flex flex-column flex-sm-column" id="content">
                 <div class="d-flex flex-xl-row flex-column flex-sm-column">
                     <div align="left" id="pic">
                         <img src = "<%= blog.image %>" width="200" >
@@ -15,7 +15,7 @@
                         </div>
                     </div>
                     <div id="titlecontent">
-                        <div>
+                        <div style="word-break: break-word;">
                             <a href="/blogs/<%= blog._id %>"><%= blog.title %></a>
                         </div>
                         <div style="word-break: break-word;">

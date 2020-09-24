@@ -19,7 +19,13 @@ router.get("/register", function(req, res){
 });
 //handle sign up logic
 router.post("/register", function(req, res){
-	var newUser = new User({username: req.body.username, email:req.body.email, firstName: req.body.firstName, lastname: req.body.lastname });
+	var newUser = new User({
+  username: req.body.username,
+  email:req.body.email,
+  firstName: req.body.firstName,
+  lastName: req.body.lastName,
+  avatar: req.body.avatar
+  });
 	User.register(newUser, req.body.password, function(err, user){
 		if(err){
 			console.log(err);
@@ -52,6 +58,23 @@ router.get("/logout", function(req, res){
 	req.flash("success", "Logged You out!!!")
 	res.redirect("/blogs");
 });
+
+//User profile
+router.get("/users/:id", function (req, res){
+  User.findById(req.params.id, function(err, foundUser){
+    if(err){
+      req.flash("error", "Something went wrong.");
+      return res.redirect('/');
+    }
+    Blog.find().where('author.id').equals(foundUser._id).exec(function(err, blogs) {
+      if(err){
+        req.flash("error", "Something went wrong.");
+        return res.redirect("/");
+      }
+      res.render("users/show", {user: foundUser, blogs: blogs});
+    })
+  })
+})
 
 //forget password
 router.get('/forgot', function(req, res){

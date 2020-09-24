@@ -39,3 +39,9 @@ button:hover,
 button:focus {
     background: #0053ba;
 }
+
+#userProfile {
+    margin: 0 auto;
+    text-align: center;
+    width: 650;
+}

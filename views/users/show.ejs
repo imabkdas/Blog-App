@@ -1,0 +1,44 @@
+<%- include('../partials/header') %>
+<div class="container d-flex flex-column flex-xs-column flex-sm-column">
+    <div class="border-bottom" style="border-bottom-color:dark">
+        <div class="d-flex">
+            <div class="thumbnail flex-auto" style="margin-right:15px">
+                <img src="<%= user.avatar %>" alt="user profile image" width="80">
+            </div>
+            <div class="flex-row">
+                <h1><%= user.firstName %> <%=user.lastName %></h1>
+                <p style="text-align:left;word-break: break-word;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                <div class="caption" style="margin-bottom:15px"> Mail to <a href="mailto:<%= user.email %>"><%= user.email %></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div>
+            <% blogs.forEach(function(blog) { %>
+            <div class="border-bottom" style="border-bottom-color:dark">
+                <div class="d-flex">
+                    <div class="thumbnail flex-auto" style="margin-right:15px">
+                        <img src="<%= user.avatar %>" alt="user profile image" width="40">
+                    </div>
+                    <div class="flex-row">
+                        <a href="/users/<%= blog.author.id %>"><%= blog.author.username%></a>
+                     </div>
+                </div>
+                <div>
+                    <div id="titlecontent">
+                        <div style="word-break: break-word;">
+                            <a href="/blogs/<%= blog._id %>"><%= blog.title %></a>
+                        </div>
+                        <div style="word-break: break-word;">
+                             <p><%- blog.description.substring(0,50) %>.......<a href="/blogs/<%= blog._id %>">Read More</a></p>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    <div>
+</div>
+
+
+<%- include('../partials/footer') %>

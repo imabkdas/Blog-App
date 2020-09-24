@@ -1,15 +1,15 @@
 <%- include('../partials/header') %>
 <div class="container">
-    <div class="d-flex justify-content-between" style="margin-top: 5px">
+    <div style="margin-top: 5px">
         <div>
-            <h1><%=blog.title%></h1>
-        </div>
-        <div>
-            <h4>Submitted by <%= blog.author.username%></h4>
-            <span><h5> on <%= blog.created.toDateString() %></h5></span>
+            <h1 style="word-break: break-word;"><%=blog.title%></h1>
         </div>
     </div>
-    <img src = "<%= blog.image %>" >
+    <img src = "<%= blog.image %>" style="margin-top: 10px;margin-bottom: 10px;">
+    <div>
+            <h4>Submitted by <a href="/users/<%= blog.author.id %>"><%= blog.author.username%> </a></h4>
+            <span><h5> on <%= blog.created.toDateString() %></h5></span>
+        </div>
     <div style="word-break: break-word;"><p><%- blog.description %></p></div>
     <div class="d-flex flex-row">
         <div style="margin-right: 15px">

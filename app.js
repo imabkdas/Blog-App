@@ -11,7 +11,7 @@ var express 		= require("express"),
  methodOverride 	= require("method-override"),
  Blog 				= require("./models/blog"),
  Comment    		= require("./models/comment"),
- User       		= require("./models/user");
+ User       		= require("./models/user"),
  async 				= require('async'),
  nodemailer  		= require('nodemailer'),
  crypto 			= require('crypto');
@@ -21,7 +21,7 @@ var commentRoutes 	= require("./routes/comments"),
  	indexRoutes     = require("./routes/index");
 
 //mongoose.connect('mongodb://localhost:27017/edit', {useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true});
-mongoose.connect(process.env.URL, {useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true,useMongoClient:true});
+mongoose.connect(process.env.URL, {useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));

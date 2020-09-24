@@ -1,7 +1,24 @@
-<%- include('partials/header') %>
+<%- include('../partials/header') %>
+<div class="container col-xs-12">
+        <div class="d-flex ml-auto" style="margin-right:150px">
+            <div class="row ml-auto">
+                <div>
+                    <h1><%= user.firstName%> <%= user.lastName %></h1>
+                    <p style="text-align:left;word-break: break-word;">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    <div class="caption"> Mail to <a href="mailto:<%= user.email %>"><%= user.email %></a></div>
+                </div>
+            </div>
+            <div class="thumbnail">
+                <img src="<%= user.avatar %>" alt="user profile image" width="80">   
+            </div>
+        </div>
+        <div class="col-md-8">
+            <ul>
+            <% blogs.forEach(function(blog) { %>
+                <li style="word-break: break-word; margin-right: 50px"><a href="/blogs/<%= blog.id %>"><%= blog.title %></a></li>
+            <% }); %>
+            </ul>
+        </div>
+</div>
 
-<p>Welcome to Blog  </p>
-
-<a href ="/blogs">View all blogs </a>
-
-<%- include('partials/footer') %>
+<%- include('../partials/footer') %>
