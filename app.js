@@ -20,8 +20,8 @@ var commentRoutes 	= require("./routes/comments"),
  	blogRoutes 		= require("./routes/blogs"),
  	indexRoutes     = require("./routes/index");
 
-mongoose.connect('mongodb://localhost:27017/edit', {useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true});
-//mongoose.connect(process.env.URL, {useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true});
+//mongoose.connect('mongodb://localhost:27017/edit', {useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect(process.env.URL, {useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true});
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
