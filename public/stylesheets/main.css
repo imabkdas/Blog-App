@@ -45,3 +45,10 @@ button:focus {
     text-align: center;
     width: 650;
 }
+.btn-warning {
+background-color: #FFFFFF;
+border-color: #2F3E48;
+}
+.fa-trash {
+    color: black;
+}
